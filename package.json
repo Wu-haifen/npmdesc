@@ -1,5 +1,5 @@
 {
-    "name": "node-red-contrib-galaxy-plc",
+    "name": "galaxy-plc",
     "version": "1.0.0",
     "description": "",
     "main": "plc.js",
