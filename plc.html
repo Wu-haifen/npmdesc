@@ -102,7 +102,7 @@
 
 <script type="text/javascript">
     (function() {
-        // 条件选项对象
+        // 条件选项对象   Condition option object
         var ports_addr = [];
         var operators = [{
                 v: "eq",
@@ -223,68 +223,68 @@
             color: "Skyblue",
             category: 'PLC',
             defaults: {
-                // 名称
+                // 名称  name
                 name: {
                     value: ""
                 },
-                // 服务器
+                // 服务器  server
                 server: {
                     value: "",
                     required: true
                 },
-                // 端口号
+                // 端口号  Port
                 port: {
                     value: "",
                     validate: RED.validators.regex(/^(\d*|)$/),
                     required: true
 
                 },
-                // 输出模式
+                // 输出模式  output mode
                 out: {
                     value: "time",
                     required: true
                 },
-                // 划分规则
+                // 划分规则  Division rules
                 splitc: {
                     value: "0",
                     required: true
                 },
-                // 模式
+                // 模式  model
                 model: {
                     value: "read",
                     required: true
                 },
-                // 模式
+                // 模式  mode'
                 wait_check: {
                     value: false,
                 },
-                //定时周期
+                //定时周期  Timing period
                 interval_sw_time: {
                     value: 1000,
                     validate: RED.validators.regex(/^\+?[1-9]\d*$/),
                 },
-                //读取PLC起始地址
+                //读取PLC起始地址  Read PLC start address
                 RD_Addr: {
                     value: "",
                     validate: function(v) {
                         return (this.model != "read") || v.length > 0;
                     }
                 },
-                //获取位数
+                //Get the number of digits
                 RD_Num: {
                     value: "",
                     validate: function(v) {
                         return (this.model != "read") || v.length > 0;
                     }
                 },
-                //写地址
+                //write address
                 WR_Addr: {
                     value: "",
                     validate: function(v) {
                         return (this.model != "write") || v.length > 0;
                     }
                 },
-                //写值
+                //write value
                 WR_Value: {
                     value: "",
                     validate: function(v) {
@@ -292,7 +292,7 @@
                     }
                 },
                 /////////////////////////////////////////////////// switch
-                // 输入属性
+                // input property
                 property: {
                     value: "payload",
                     required: true,
@@ -346,7 +346,7 @@
             labelStyle: function() {
                 return this.name ? "node_label_italic" : "";
             },
-            // 显示对话之前调用
+            // 显示对话之前调用  Called before the dialog is displayed
             oneditprepare: function() {
                 var node = this;
                 var previous = null;
